@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "modules": true,
+    "arrowFunctions": true,
+    "classes": true,
+    "spread": true
+  }
+}
