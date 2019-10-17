@@ -2,11 +2,10 @@ import React, { useEffect } from 'react';
 import logo from 'assets/images/logo.svg';
 import './App.css';
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from 'actions';
 
 function App() {
-  const gnomes = useSelector(state => state.gnomes);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,7 +17,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit
+          <code>src/App.js</code>
+          and save to reload.
         </p>
         <a
           className="App-link"
