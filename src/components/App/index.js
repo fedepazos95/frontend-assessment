@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from 'assets/images/logo.svg';
 import './App.css';
 
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchData } from 'actions';
+
 function App() {
+  const gnomes = useSelector(state => state.gnomes);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <header className="App-header">

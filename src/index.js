@@ -1,23 +1,25 @@
 import React from 'react';
 import { render } from 'react-dom';
-import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+import * as serviceWorker from './serviceWorker';
+import configureStore from './configureStore';
 import App from './components/App';
 
 import './index.css';
 
-const store = createStore(rootReducer);
+const store = configureStore();
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+const renderApp = () =>
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+  module.hot.accept('./components/App', renderApp);
+}
+
 serviceWorker.unregister();
+renderApp();
