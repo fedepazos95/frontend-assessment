@@ -1,21 +1,17 @@
+/* eslint-disable global-require */
 import React from 'react';
-import {
-  Container, Typography,
-} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 // components
+import GridContainer from 'components/GridContainer';
+import GridItem from 'components/GridItem';
 import Header from 'components/Header';
+import HeaderLinks from 'components/Header/Links';
+import Parallax from 'components/Parallax';
 
-const useStyles = makeStyles((theme) => ({
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-}));
+import styles from './landingPageStyle';
+
+const useStyles = makeStyles(styles);
 
 export default function LandingPage() {
   const classes = useStyles();
@@ -23,17 +19,24 @@ export default function LandingPage() {
     <div>
       <Header
         brand="Frontend Assessment"
+        rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
       />
-      <Container maxWidth="sm">
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Towns
-        </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" paragraph>
-          Select a Town of the list to start exploring!
-        </Typography>
-      </Container>
+      <Parallax image={require('assets/images/village3.jpg')}>
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem>
+              <div className={classes.brand}>
+                <h1 className={classes.title}>Welcome to Brastlewark</h1>
+                <h3 className={classes.subtitle}>
+                  From here you can browse all the inhabitants details.
+                </h3>
+              </div>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
     </div>
   );
 }
