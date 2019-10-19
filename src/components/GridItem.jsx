@@ -17,10 +17,12 @@ const styles = {
 const useStyles = makeStyles(styles);
 
 export default function GridItem(props) {
+  const {
+    children, className, xs, sm, md,
+  } = props;
   const classes = useStyles();
-  const { children, className } = props;
   return (
-    <Grid item className={`${classes.grid} ${className}`}>
+    <Grid xs={xs} sm={sm} md={md} className={`${classes.grid} ${className}`} item>
       {children}
     </Grid>
   );
@@ -31,6 +33,9 @@ GridItem.defaultProps = {
 };
 
 GridItem.propTypes = {
+  xs: PropTypes.number.isRequired,
+  sm: PropTypes.number.isRequired,
+  md: PropTypes.number.isRequired,
   children: PropTypes.node,
   className: PropTypes.string,
 };

@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react';
+import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 
 // components
@@ -8,6 +9,9 @@ import GridItem from 'components/GridItem';
 import Header from 'components/Header';
 import HeaderLinks from 'components/Header/Links';
 import Parallax from 'components/Parallax';
+
+// sections
+import Tabs from './Sections/Tabs';
 
 import styles from './landingPageStyle';
 
@@ -26,17 +30,18 @@ export default function LandingPage() {
       <Parallax image={require('assets/images/village3.jpg')}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem>
+            <GridItem xs={12} md={12} sm={12}>
               <div className={classes.brand}>
                 <h1 className={classes.title}>Welcome to Brastlewark</h1>
-                <h3 className={classes.subtitle}>
-                  From here you can browse all the inhabitants details.
-                </h3>
               </div>
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
+
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <Tabs />
+      </div>
     </div>
   );
 }
