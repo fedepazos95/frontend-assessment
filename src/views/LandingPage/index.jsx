@@ -21,7 +21,11 @@ export default function LandingPage() {
   const classes = useStyles();
   return (
     <div>
-      <Header />
+      <Header
+        brand="Frontend Assessment"
+        fixed
+        color="transparent"
+      />
       <Container maxWidth="sm">
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
           Towns
