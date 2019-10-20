@@ -21,7 +21,7 @@ export default function GnomeCard({
     [classes.cardTitle]: true,
   });
   return (
-    <Card>
+    <Card className={classes.card}>
       <CardHeader color={headerColor}>
         {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
       </CardHeader>

@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from 'actions';
 
@@ -17,16 +18,18 @@ const useStyles = makeStyles(styles);
 export default function Gnomes() {
   const classes = useStyles();
   const [currentPage, setCurrentPage] = useState(1);
-  const [gnomesPerPage] = useState(20);
+  const [gnomesPerPage] = useState(12);
   const { Brastlewark: gnomesList } = useSelector((state) => state.gnomes);
   const dispatch = useDispatch();
 
   useEffect(() => {
     // Timeout to simulate API call to show the loading spinner
-    setTimeout(() => (
-      dispatch(fetchData())
-    ), 1200);
-  }, [dispatch]);
+    if (!gnomesList) {
+      setTimeout(() => (
+        dispatch(fetchData())
+      ), 1200);
+    }
+  }, [dispatch, gnomesList]);
 
   const handlePageChange = (action) => {
     window.scroll({ top: 600, left: 0, behavior: 'smooth' });

@@ -59,11 +59,13 @@ export default function Header({
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-
+  const brandComponent = typeof (brand) === 'object'
+    ? <Button className={classes.title} onClick={brand.action}>{brand.text}</Button>
+    : <Button className={classes.title}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
-        <Button className={classes.title}>{brand}</Button>
+        {brandComponent}
         <div className={classes.flex} />
         <Hidden smDown implementation="css">
           {rightLinks}
@@ -102,7 +104,13 @@ Header.propTypes = {
     'transparent',
     'white',
   ]),
-  brand: PropTypes.string,
+  brand: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      text: PropTypes.string,
+      action: PropTypes.func,
+    }),
+  ]),
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
   rightLinks: PropTypes.node,

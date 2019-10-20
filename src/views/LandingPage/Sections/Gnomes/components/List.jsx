@@ -8,7 +8,9 @@ import GnomeCard from 'components/GnomeCard';
 import Avatar from 'components/Avatar';
 import Stats from 'components/Stats';
 
-export default function List({ currentPage, gnomesPerPage, gnomesList }) {
+export default function List({
+  currentPage, gnomesPerPage, gnomesList,
+}) {
   const indexOfLastGnome = currentPage * gnomesPerPage;
   const indexOfFirstGnome = indexOfLastGnome - gnomesPerPage;
   const currentGnomes = gnomesList.slice(indexOfFirstGnome, indexOfLastGnome);
@@ -25,8 +27,8 @@ export default function List({ currentPage, gnomesPerPage, gnomesList }) {
                 {
                   content: (
                     <div>
-                      <Avatar image={gnome.thumbnail} alt="Fulanito Pepito" />
-                      <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
+                      <Avatar to={`${gnome.id}/profile`} image={gnome.thumbnail} alt={gnome.name} />
+                      {/* <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} /> */}
                     </div>
                   ),
                 }
@@ -42,13 +44,15 @@ export default function List({ currentPage, gnomesPerPage, gnomesList }) {
 List.propTypes = {
   currentPage: PropTypes.number.isRequired,
   gnomesPerPage: PropTypes.number.isRequired,
-  gnomesList: PropTypes.arrayOf({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    thumbnail: PropTypes.string,
-    age: PropTypes.number,
-    weigth: PropTypes.float,
-    height: PropTypes.float,
-    hair_color: PropTypes.string,
-  }),
+  gnomesList: PropTypes.arrayOf(PropTypes.shape(
+    {
+      id: PropTypes.number,
+      name: PropTypes.string,
+      thumbnail: PropTypes.string,
+      age: PropTypes.number,
+      weigth: PropTypes.number,
+      height: PropTypes.number,
+      hair_color: PropTypes.string,
+    },
+  )),
 };
