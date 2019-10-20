@@ -12,7 +12,7 @@ import Parallax from 'components/Parallax';
 import Footer from 'components/Footer';
 
 // sections
-import Tabs from './Sections/Tabs';
+import Gnomes from './Sections/Gnomes';
 
 import styles from './landingPageStyle';
 
@@ -45,7 +45,7 @@ export default function LandingPage() {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <Tabs />
+        <Gnomes />
       </div>
       <Footer />
     </div>
