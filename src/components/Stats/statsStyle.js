@@ -1,5 +1,6 @@
 const statsStyle = {
   stats: {
+    marginTop: '20px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

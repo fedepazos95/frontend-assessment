@@ -21,6 +21,7 @@ const gnomeProfileStyle = {
     background: '#FFFFFF',
     position: 'relative',
     zIndex: '3',
+    padding: '10px',
   },
   mainRaised: {
     margin: '-60px 30px 0px',

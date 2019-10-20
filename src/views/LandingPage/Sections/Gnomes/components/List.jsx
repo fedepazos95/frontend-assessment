@@ -28,7 +28,6 @@ export default function List({
                   content: (
                     <div>
                       <Avatar to={`${gnome.id}/profile`} image={gnome.thumbnail} alt={gnome.name} />
-                      {/* <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} /> */}
                     </div>
                   ),
                 }
