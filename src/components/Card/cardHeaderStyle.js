@@ -1,5 +1,5 @@
 import {
-  warningCardHeader,
+  primaryCardHeader,
 } from 'assets/commonStyles';
 
 const cardHeaderStyle = {
@@ -12,11 +12,7 @@ const cardHeaderStyle = {
     border: '0',
     marginBottom: '0',
   },
-  cardHeaderPlain: {
-    marginLeft: '0px',
-    marginRight: '0px',
-  },
-  warningCardHeader,
+  primaryCardHeader,
 };
 
 export default cardHeaderStyle;

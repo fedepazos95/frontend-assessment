@@ -1,12 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   List, ListItem, Tooltip, Button,
 } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
-
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './linksStyle';
 
 const useStyles = makeStyles(styles);

@@ -17,10 +17,6 @@ const cardStyle = {
     fontSize: '.875rem',
     transition: 'all 300ms linear',
   },
-  cardPlain: {
-    background: 'transparent',
-    boxShadow: 'none',
-  },
 };
 
 export default cardStyle;

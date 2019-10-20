@@ -1,18 +1,17 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import {
   AppBar, Toolbar, Button, Hidden, Drawer, IconButton,
 } from '@material-ui/core';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/icons/Menu';
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './headerStyle';
 
 const useStyles = makeStyles(styles);
 
 export default function Header({
-  color, brand, fixed, absolute, rightLinks,
+  color, brand, fixed, absolute, rightLinks, changeColorOnScroll,
 }) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -20,6 +19,36 @@ export default function Header({
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const headerColorChange = () => {
+    const windowsScrollTop = window.pageYOffset;
+    if (windowsScrollTop > changeColorOnScroll.height) {
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.remove(classes[color]);
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.add(classes[changeColorOnScroll.color]);
+    } else {
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.add(classes[color]);
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.remove(classes[changeColorOnScroll.color]);
+    }
+  };
+
+  React.useEffect(() => {
+    if (changeColorOnScroll) {
+      window.addEventListener('scroll', headerColorChange);
+    }
+    return function cleanup() {
+      if (changeColorOnScroll) {
+        window.removeEventListener('scroll', headerColorChange);
+      }
+    };
+  });
 
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -68,11 +97,19 @@ export default function Header({
 Header.propTypes = {
   color: PropTypes.oneOf([
     'transparent',
+    'white',
   ]),
   brand: PropTypes.string,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
   rightLinks: PropTypes.node,
+  changeColorOnScroll: PropTypes.shape({
+    height: PropTypes.number.isRequired,
+    color: PropTypes.oneOf([
+      'transparent',
+      'white',
+    ]).isRequired,
+  }),
 };
 
 Header.defaultProps = {

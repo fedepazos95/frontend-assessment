@@ -26,6 +26,10 @@ export default function LandingPage() {
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
+        changeColorOnScroll={{
+          height: 400,
+          color: 'white',
+        }}
       />
       <Parallax image={require('assets/images/village3.jpg')}>
         <div className={classes.container}>

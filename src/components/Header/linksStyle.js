@@ -65,9 +65,6 @@ const linksStyle = (theme) => ({
     marginRight: '4px',
   },
   ...tooltip,
-  marginRight5: {
-    marginRight: '5px',
-  },
 });
 
 export default linksStyle;

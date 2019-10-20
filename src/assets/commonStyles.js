@@ -2,6 +2,8 @@
 // // // Variables - Styles that are used on more than one component
 // #############################
 
+const primaryColor = '#322F5C';
+
 const conatinerFluid = {
   paddingRight: '15px',
   paddingLeft: '15px',
@@ -42,24 +44,25 @@ const boxShadow = {
     '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
 };
 
-const warningBoxShadow = {
+const primaryBoxShadow = {
   boxShadow:
     '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
 };
 
-const warningCardHeader = {
+const primaryCardHeader = {
   color: '#fff',
   background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
-  ...warningBoxShadow,
+  ...primaryBoxShadow,
 };
 
 export {
+  primaryColor,
   conatinerFluid,
   container,
   defaultFont,
   drawerWidth,
   transition,
   boxShadow,
-  warningBoxShadow,
-  warningCardHeader,
+  primaryBoxShadow,
+  primaryCardHeader,
 };
