@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-
-const styles = {
-  grid: {
-    marginRight: '-15px',
-    marginLeft: '-15px',
-    width: '100%',
-  },
-};
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './gridContainerStyle';
 
 const useStyles = makeStyles(styles);
 

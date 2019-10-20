@@ -9,6 +9,7 @@ import GridItem from 'components/GridItem';
 import Header from 'components/Header';
 import HeaderLinks from 'components/Header/Links';
 import Parallax from 'components/Parallax';
+import Footer from 'components/Footer';
 
 // sections
 import Tabs from './Sections/Tabs';
@@ -46,6 +47,7 @@ export default function LandingPage() {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <Tabs />
       </div>
+      <Footer />
     </div>
   );
 }

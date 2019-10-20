@@ -35,6 +35,295 @@ export default function Tabs() {
                 }
               />
             </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
+            <GridItem xs={12} sm={6} md={3}>
+              <GnomeCard
+                title="Fulanito Pepito"
+                headerColor="primary"
+                data={
+                  {
+                    content: (
+                      <p className={classes.textCenter}>
+                        I think that’s a responsibility that I have, to push
+                        possibilities, to show people, this is the level that
+                        things could be at. So when you get something that has
+                      </p>
+                    ),
+                  }
+                }
+              />
+            </GridItem>
           </GridContainer>
         </div>
       </div>

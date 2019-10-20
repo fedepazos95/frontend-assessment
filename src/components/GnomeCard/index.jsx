@@ -9,7 +9,7 @@ import styles from './gnomeCardStyle';
 
 const useStyles = makeStyles(styles);
 
-export default function CustomTabs({
+export default function GnomeCard({
   headerColor, data, title,
 }) {
   const classes = useStyles();
@@ -28,12 +28,12 @@ export default function CustomTabs({
   );
 }
 
-CustomTabs.propTypes = {
+GnomeCard.propTypes = {
   headerColor: PropTypes.oneOf([
-    'warning',
+    'primary',
   ]),
   title: PropTypes.string,
   data: PropTypes.shape({
-    content: PropTypes.string.isRequired,
+    content: PropTypes.object.isRequired,
   }),
 };
