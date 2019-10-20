@@ -1,15 +1,18 @@
 /* eslint-disable global-require */
 import React from 'react';
 import classNames from 'classnames';
+
+// Material-UI Core Components
+import { makeStyles } from '@material-ui/core/styles';
+// Components
 import GridContainer from 'components/GridContainer';
 import GridItem from 'components/GridItem';
 import Header from 'components/Header';
 import HeaderLinks from 'components/Header/Links';
 import Parallax from 'components/Parallax';
 import Footer from 'components/Footer';
-import { makeStyles } from '@material-ui/core/styles';
-
 import Gnomes from './Sections/Gnomes';
+// Style
 import styles from './landingPageStyle';
 
 const useStyles = makeStyles(styles);
@@ -28,7 +31,7 @@ export default function LandingPage() {
           color: 'white',
         }}
       />
-      <Parallax image={require('assets/images/village3.jpg')}>
+      <Parallax image={require('assets/images/village.jpg')}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} md={12} sm={12}>

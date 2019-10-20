@@ -1,7 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+// Material-UI Core Components
 import { makeStyles } from '@material-ui/core/styles';
+// Style
 import styles from './cardHeaderStyle';
 
 const useStyles = makeStyles(styles);

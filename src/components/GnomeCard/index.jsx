@@ -1,10 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+// Material-UI Core Components
+import { makeStyles } from '@material-ui/core/styles';
+// Components
 import Card from 'components/Card/Card';
 import CardBody from 'components/Card/CardBody';
 import CardHeader from 'components/Card/CardHeader';
-import { makeStyles } from '@material-ui/core/styles';
+// Style
 import styles from './gnomeCardStyle';
 
 const useStyles = makeStyles(styles);
@@ -32,8 +36,8 @@ GnomeCard.propTypes = {
   headerColor: PropTypes.oneOf([
     'primary',
   ]),
-  title: PropTypes.string,
   data: PropTypes.shape({
     content: PropTypes.object.isRequired,
   }),
+  title: PropTypes.string,
 };

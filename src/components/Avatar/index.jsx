@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+// Material-UI Core Components
 import { makeStyles } from '@material-ui/core/styles';
+// Style
 import styles from './avatarStyle';
 
 const useStyles = makeStyles(styles);

@@ -1,7 +1,11 @@
 import React from 'react';
+
+// Material-UI Core Components
+import { makeStyles } from '@material-ui/core/styles';
+// Components
 import GridContainer from 'components/GridContainer';
 import { ClipLoader } from 'react-spinners';
-import { makeStyles } from '@material-ui/core/styles';
+// Style
 import styles from './loadingStyle';
 
 const useStyles = makeStyles(styles);

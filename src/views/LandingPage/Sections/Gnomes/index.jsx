@@ -1,22 +1,15 @@
 /* eslint-disable global-require */
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from 'actions';
-import GridContainer from 'components/GridContainer';
-import GridItem from 'components/GridItem';
-import GnomeCard from 'components/GnomeCard';
-import Avatar from 'components/Avatar';
-import Stats from 'components/Stats';
-import { ClipLoader } from 'react-spinners';
-import { Button, Tooltip } from '@material-ui/core';
-import NavigateBefore from '@material-ui/icons/NavigateBefore';
-import NavigateNext from '@material-ui/icons/NavigateNext';
 
+// Material-UI Core Components
+import { makeStyles } from '@material-ui/core/styles';
+// Components
 import Loading from './components/Loading';
 import NavButtons from './components/NavButtons';
-
-
+import List from './components/List';
+// Style
 import styles from './gnomesStyle';
 
 const useStyles = makeStyles(styles);
@@ -44,37 +37,6 @@ export default function Gnomes() {
     }, 700);
   };
 
-  const renderGnomes = () => {
-    const indexOfLastGnome = currentPage * gnomesPerPage;
-    const indexOfFirstGnome = indexOfLastGnome - gnomesPerPage;
-    const currentGnomes = gnomesList.slice(indexOfFirstGnome, indexOfLastGnome);
-
-    return (
-      <GridContainer>
-        {
-          currentGnomes.map((gnome) => (
-            <GridItem key={gnome.id} xs={12} sm={6} md={3}>
-              <GnomeCard
-                title={gnome.name}
-                headerColor="primary"
-                data={
-                  {
-                    content: (
-                      <div>
-                        <Avatar image={gnome.thumbnail} alt="Fulanito Pepito" />
-                        <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
-                      </div>
-                    ),
-                  }
-                }
-              />
-            </GridItem>
-          ))
-        }
-      </GridContainer>
-    );
-  };
-
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -83,7 +45,7 @@ export default function Gnomes() {
           {
             !gnomesList
               ? <Loading />
-              : renderGnomes()
+              : <List currentPage={currentPage} gnomesPerPage={gnomesPerPage} gnomesList={gnomesList} />
           }
         </div>
         {

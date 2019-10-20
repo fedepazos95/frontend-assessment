@@ -1,11 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+// Material-UI Core Components
 import {
   AppBar, Toolbar, Button, Hidden, Drawer, IconButton,
 } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
+// Style
 import styles from './headerStyle';
 
 const useStyles = makeStyles(styles);

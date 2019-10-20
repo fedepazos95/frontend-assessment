@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+// Material-UI Core Components
 import { Button, Tooltip } from '@material-ui/core';
 import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import NavigateNext from '@material-ui/icons/NavigateNext';
 import { makeStyles } from '@material-ui/core/styles';
+// Components
 import GridContainer from 'components/GridContainer';
 import GridItem from 'components/GridItem';
+// Style
 import styles from './navButtonsStyle';
 
 const useStyles = makeStyles(styles);
