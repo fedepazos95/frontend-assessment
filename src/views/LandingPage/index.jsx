@@ -1,19 +1,15 @@
 /* eslint-disable global-require */
 import React from 'react';
 import classNames from 'classnames';
-import { makeStyles } from '@material-ui/core/styles';
-
-// components
 import GridContainer from 'components/GridContainer';
 import GridItem from 'components/GridItem';
 import Header from 'components/Header';
 import HeaderLinks from 'components/Header/Links';
 import Parallax from 'components/Parallax';
 import Footer from 'components/Footer';
+import { makeStyles } from '@material-ui/core/styles';
 
-// sections
 import Gnomes from './Sections/Gnomes';
-
 import styles from './landingPageStyle';
 
 const useStyles = makeStyles(styles);
@@ -28,7 +24,7 @@ export default function LandingPage() {
         fixed
         color="transparent"
         changeColorOnScroll={{
-          height: 400,
+          height: 230,
           color: 'white',
         }}
       />
