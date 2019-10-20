@@ -33,6 +33,7 @@ function GnomeProfile({ history, match }) {
     history.push('/');
     return null;
   }
+  const backgroundImage = require('assets/images/village.jpg');
   return (
     <div>
       <Header
@@ -45,7 +46,7 @@ function GnomeProfile({ history, match }) {
           color: 'white',
         }}
       />
-      <Parallax image={require('assets/images/village.jpg')}>
+      <Parallax image={backgroundImage}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} md={12} sm={12}>
@@ -58,16 +59,19 @@ function GnomeProfile({ history, match }) {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised, classes.textCenter)}>
-        <Avatar image={gnome.thumbnail} />
-        <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
-        <GridContainer>
-          <GridItem xs={12} md={6} sm={6}>
-            <GnomeFieldList title="Jobs" list={gnome.professions} icon={<WorkIcon />} />
-          </GridItem>
-          <GridItem xs={12} md={6} sm={6}>
-            <GnomeFieldList title="Friends" list={gnome.friends} icon={<PeopleIcon />} />
-          </GridItem>
-        </GridContainer>
+        <h1>Gnome Profile</h1>
+        <Avatar image={gnome.thumbnail} className={classes.avatar} />
+        <div className={classes.container}>
+          <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
+          <GridContainer>
+            <GridItem xs={12} md={6} sm={6}>
+              <GnomeFieldList title="Jobs" list={gnome.professions} icon={<WorkIcon />} />
+            </GridItem>
+            <GridItem xs={12} md={6} sm={6}>
+              <GnomeFieldList title="Friends" list={gnome.friends} icon={<PeopleIcon />} />
+            </GridItem>
+          </GridContainer>
+        </div>
       </div>
 
       <Footer />

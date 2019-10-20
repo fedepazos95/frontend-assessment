@@ -35,6 +35,10 @@ const gnomeProfileStyle = {
   textCenter: {
     textAlign: 'center',
   },
+  avatar: {
+    maxWidth: '700px',
+    width: '100%',
+  },
 };
 
 export default gnomeProfileStyle;

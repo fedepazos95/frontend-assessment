@@ -24,7 +24,7 @@ export default function Stats({
       <GridContainer>
         <GridItem xs={12} sm={6} md={3} className={classes.statItem}>
           <Event className={classes.icons} />
-          {`Age ${age}`}
+          {`Age: ${age}`}
         </GridItem>
         <GridItem xs={12} sm={6} md={3} className={classes.statItem}>
           <FitnessCenter className={classes.icons} />

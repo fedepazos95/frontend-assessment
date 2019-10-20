@@ -9,7 +9,9 @@ import styles from './avatarStyle';
 
 const useStyles = makeStyles(styles);
 
-export default function Avatar({ to, image, alt }) {
+export default function Avatar({
+ className, to, image, alt 
+}) {
   const classes = useStyles();
 
   if (to) {
@@ -28,7 +30,7 @@ export default function Avatar({ to, image, alt }) {
     <img
       src={image}
       alt={alt}
-      className={`${classes.rounded} ${classes.fluid}`}
+      className={`${className} ${classes.rounded} ${classes.fluid}`}
     />
   );
 }
@@ -38,6 +40,7 @@ Avatar.defaultProps = {
 };
 
 Avatar.propTypes = {
+  className: PropTypes.string,
   to: PropTypes.string,
   image: PropTypes.string.isRequired,
   alt: PropTypes.string,

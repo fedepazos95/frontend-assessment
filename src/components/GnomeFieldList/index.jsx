@@ -10,18 +10,20 @@ export default function GnomeJobs({ title, list, icon }) {
     <List>
       <h3>{title}</h3>
       {
-        list.map((job, key) => (
-          <ListItem key={key}>
-            <ListItemAvatar>
-              <Avatar>
-                {icon}
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary={job}
-            />
-          </ListItem>
-        ))
+        list.length > 0
+          ? list.map((job, key) => (
+            <ListItem key={key}>
+              <ListItemAvatar>
+                <Avatar>
+                  {icon}
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText
+                primary={job}
+              />
+            </ListItem>
+          ))
+          : <div>{`This gnome has no ${title} :(`}</div>
       }
     </List>
   );

@@ -19,6 +19,7 @@ const useStyles = makeStyles(styles);
 
 export default function LandingPage() {
   const classes = useStyles();
+  const backgroundImage = require('assets/images/village.jpg');
   return (
     <div>
       <Header
@@ -31,7 +32,7 @@ export default function LandingPage() {
           color: 'white',
         }}
       />
-      <Parallax image={require('assets/images/village.jpg')}>
+      <Parallax image={backgroundImage}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} md={12} sm={12}>

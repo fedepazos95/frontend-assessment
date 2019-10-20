@@ -2,7 +2,7 @@
 /* eslint-disable global-require */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from 'actions';
+import { fetchData, setPage } from 'actions';
 
 // Material-UI Core Components
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,26 +17,27 @@ const useStyles = makeStyles(styles);
 
 export default function Gnomes() {
   const classes = useStyles();
-  const [currentPage, setCurrentPage] = useState(1);
   const [gnomesPerPage] = useState(12);
   const { Brastlewark: gnomesList } = useSelector((state) => state.gnomes);
+  const page = useSelector((state) => state.page);
   const dispatch = useDispatch();
 
+  console.log('page', page);
   useEffect(() => {
     // Timeout to simulate API call to show the loading spinner
     if (!gnomesList) {
-      setTimeout(() => (
-        dispatch(fetchData())
-      ), 1200);
+      setTimeout(() => {
+        dispatch(fetchData());
+      }, 1200);
     }
   }, [dispatch, gnomesList]);
 
   const handlePageChange = (action) => {
     window.scroll({ top: 600, left: 0, behavior: 'smooth' });
     // Prevent empty list
-    const page = action === 'next' ? currentPage + 1 : currentPage - 1;
+    const nextPage = action === 'next' ? page + 1 : page - 1;
     setTimeout(() => {
-      setCurrentPage((page < 1) ? 1 : page);
+      dispatch(setPage((nextPage < 1) ? 1 : nextPage));
     }, 700);
   };
 
@@ -48,11 +49,11 @@ export default function Gnomes() {
           {
             !gnomesList
               ? <Loading />
-              : <List currentPage={currentPage} gnomesPerPage={gnomesPerPage} gnomesList={gnomesList} />
+              : <List currentPage={page} gnomesPerPage={gnomesPerPage} gnomesList={gnomesList} />
           }
         </div>
         {
-          gnomesList && <NavButtons page={currentPage} handlePageChange={handlePageChange} />
+          gnomesList && <NavButtons page={page} handlePageChange={handlePageChange} />
         }
       </div>
     </div>
