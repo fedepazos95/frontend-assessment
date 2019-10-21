@@ -29,4 +29,7 @@ matrix:
       script:
         - sam validate --template scripts/template.yaml
       deploy:
-        - bash scripts/deploy.sh
+        provider: script
+        script: bash scripts/deploy.sh
+        on:
+          branch: master
