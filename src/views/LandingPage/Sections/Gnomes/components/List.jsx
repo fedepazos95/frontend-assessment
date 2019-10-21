@@ -6,7 +6,6 @@ import GridContainer from 'components/GridContainer';
 import GridItem from 'components/GridItem';
 import GnomeCard from 'components/GnomeCard';
 import Avatar from 'components/Avatar';
-import Stats from 'components/Stats';
 
 export default function List({
   currentPage, gnomesPerPage, gnomesList,
