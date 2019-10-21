@@ -9,7 +9,7 @@ jobs:
     - stage: Installing CLIs...
       script:
         - sudo -H apt update
-        - yes '' | sudo -H add-apt-repository ppa:jonathonf/python-3.6
+        - yes '' | sudo -H add-apt-repository ppa:fkrull/deadsnakes
         - sudo -H sudo apt-get update
         - sudo -H apt-get install python3.6
         - python3 -V
