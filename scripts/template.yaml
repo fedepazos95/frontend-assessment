@@ -4,6 +4,8 @@ Description: Frontend Assessment
 Parameters:
   Environment:
     Type: String
+  Project:
+    Type: String
   DeployBucket:
     Type: String
   DomainBucket:
@@ -98,3 +100,10 @@ Resources:
               - !Sub 'arn:aws:s3:::${LogBucket}'
             Principal:
                 AWS: !Ref LogsUserArn
+
+Outputs:
+  CloudFrontDistributionOutput:
+    Description: CloudFront Distribution
+    Value: !Ref myDistribution
+    Export:
+      Name: !Join ["-", [!Ref Environment, "PortalDistribution", !Ref Project]]
