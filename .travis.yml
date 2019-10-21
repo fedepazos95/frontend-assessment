@@ -17,27 +17,13 @@ matrix:
     - language: python
       python:
         - "2.7"
-      jobs:
-        include:
-          - stage: Installing dependencies...
-            script:
-              - pip install awscli
-              - pip install aws-sam-cli
-          - stage: Sam validate
-            script: sam validate --template scripts/template.yaml
-          - stage: Deploy
-            script: bash scripts/deploy.sh
-            env:
-              - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
-          # - stage: Produce Coverage
-          #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-      # branches:
-      #   only: master
-      # install:
-      #   - pip install awscli
-      #   - pip install aws-sam-cli
-      # before_deploy:
-      #   - sam validate --template scripts/template.yaml
+      branches:
+        only: master
+      install:
+        - pip install awscli
+        - pip install aws-sam-cli
+      before_deploy:
+        - sam validate --template scripts/template.yaml
       # deploy:
       #   provider: script
       #   script: bash scripts/deploy.sh
