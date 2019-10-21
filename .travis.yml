@@ -8,8 +8,6 @@ matrix:
           - "node_modules"
       jobs:
         include:
-          - stage: Test pip
-            script: pip install awscli
           - stage: Installing dependencies...
             script: yarn install
           - stage: Unit Tests
@@ -22,15 +20,13 @@ matrix:
       branches:
         only:
           - master
+      env:
+        global: 
+          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
       install:
         - pip install awscli
         - pip install aws-sam-cli
       script:
         - sam validate --template scripts/template.yaml
-      # deploy:
-      #   provider: script
-      #   script: deploy.sh
-      #   on:
-      #     branch: master
-      #   env:
-      #     - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
+      deploy:
+        - bash scripts/deploy.sh
