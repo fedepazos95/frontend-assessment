@@ -1,23 +1,25 @@
-language: node_js
-node_js:
-  - "stable"
-cache:
-  directories:
-    - "node_modules"
-
-jobs:
+matrix:
   include:
-    - stage: Installing dependencies...
-      script: yarn install
-    - stage: Unit Tests
-      script: yarn test
-    # - stage: Produce Coverage
-    #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-    - stage: Creating AWS Credentials...
-      script: bash scripts/ecr_credentials.sh
-      if: branch = master
-    - stage: Deploying to aws...
-      script: bash scripts/deploy.sh
-      if: branch = master
-      env:
-        - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+    - language: node_js
+      node_js:
+        - "stable"
+      cache:
+        directories:
+          - "node_modules"
+      jobs:
+        include:
+          - stage: Installing dependencies...
+            script: yarn install
+          - stage: Unit Tests
+            script: yarn test
+          # - stage: Produce Coverage
+          #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+          - stage: Creating AWS Credentials...
+            script: bash scripts/ecr_credentials.sh
+            if: branch = master
+          - stage: Deploying to aws...
+            script: bash scripts/deploy.sh
+            if: branch = master
+            env:
+              - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+
