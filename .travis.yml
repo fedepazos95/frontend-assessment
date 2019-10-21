@@ -14,7 +14,8 @@ matrix:
             script: yarn test
           # - stage: Produce Coverage
           #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-    - language: python
+    - os: linux
+      language: python
       python:
         - "2.7"
       jobs:
