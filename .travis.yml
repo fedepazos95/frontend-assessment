@@ -18,7 +18,8 @@ matrix:
       python:
         - "2.7"
       branches:
-        only: master
+        only:
+          - master
       before_install:
         - cd scripts
       install:
@@ -26,11 +27,6 @@ matrix:
         - pip install aws-sam-cli
       script:
         - sam validate
-      before_deploy:
-        provider: script
-        script: ecr_credentials.sh
-        on:
-          branch: master
       deploy:
         provider: script
         script: deploy.sh
