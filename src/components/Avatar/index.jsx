@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +11,14 @@ import styles from './avatarStyle';
 const useStyles = makeStyles(styles);
 
 export default function Avatar({
- className, to, image, alt 
+  className, to, image, alt,
 }) {
   const classes = useStyles();
+  const imageClasses = classNames({
+    [classes.rounded]: true,
+    [classes.fluid]: true,
+    [className]: className !== undefined,
+  });
 
   if (to) {
     // Wrap it as a Link if it have to prop
@@ -21,7 +27,7 @@ export default function Avatar({
         <img
           src={image}
           alt={alt}
-          className={`${classes.rounded} ${classes.fluid}`}
+          className={imageClasses}
         />
       </Link>
     );

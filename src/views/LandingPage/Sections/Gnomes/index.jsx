@@ -22,7 +22,6 @@ export default function Gnomes() {
   const page = useSelector((state) => state.page);
   const dispatch = useDispatch();
 
-  console.log('page', page);
   useEffect(() => {
     // Timeout to simulate API call to show the loading spinner
     if (!gnomesList) {

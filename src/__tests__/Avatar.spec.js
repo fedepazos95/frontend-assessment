@@ -20,13 +20,14 @@ describe('<Avatar /> with no props', () => {
 describe('<Avatar /> with props', () => {
   const initialProps = {
     image: 'imageUrl',
+    className: 'test',
   };
   const container = shallow(<Avatar {...initialProps} />);
 
   it('should have proper props for image field', () => {
     expect(container.find('img').props()).toEqual({
       alt: '',
-      className: 'makeStyles-rounded-2 makeStyles-fluid-1',
+      className: 'test makeStyles-rounded-2 makeStyles-fluid-1',
       src: 'imageUrl',
     });
   });
