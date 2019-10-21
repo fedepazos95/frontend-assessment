@@ -9,7 +9,7 @@ jobs:
     - stage: Installing CLIs...
       script:
         - sudo -H apt update
-        - sudo -H add-apt-repository ppa:deadsnakes/ppa
+        - yes '' | sudo -H add-apt-repository ppa:deadsnakes/ppa
         - sudo -H apt-get install python3.6
         - python3 -V
         - sudo -H apt install python3-pip python3-setuptools python3-wheel
