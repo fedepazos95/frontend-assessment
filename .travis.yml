@@ -13,9 +13,14 @@ jobs:
       script: yarn test
     # - stage: Produce Coverage
     #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-
+    - stage: Creating AWS Credentials...
+      script: bash scripts/ecr_credentials.sh
+      if: branch = master
+      
 deploy:
   provider: script
   script: scripts/deploy.sh
   on:
     branch: master
+  env:
+    - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
