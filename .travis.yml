@@ -20,18 +20,16 @@ matrix:
       branches:
         only:
           - master
-      before_install:
-        - cd scripts
+      env:
+        global: 
+          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
       install:
         - pip install awscli
         - pip install aws-sam-cli
       script:
-        - sam validate
+        - sam validate --template scripts/template.yaml
       deploy:
         provider: script
-        script: deploy.sh
+        script: bash scripts/deploy.sh
         on:
           branch: master
-        env:
-          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy          
-
