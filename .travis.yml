@@ -1,40 +1,67 @@
-matrix:
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+before_install:
+  - sudo pip3 install awscli
+  - sudo pip3 install aws-sam-cli
+script:
+  - sam validate --template scripts/template.yaml
+jobs:
   include:
-    - language: node_js
-      node_js:
-        - "stable"
-      cache:
-        directories:
-          - "node_modules"
-      jobs:
-        include:
-          - stage: Installing dependencies...
-            script: yarn install
-          - stage: Unit Tests
-            script: yarn test
-          # - stage: Produce Coverage
-          #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-    - language: python
-      python:
-        - "3.6"
-      branches:
-        only:
-          - master
-      install:
-        - pip3 install awscli
-        - pip3 install aws-sam-cli
-      script:
-        - sam validate --template scripts/template.yaml
-      before_deploy:
-        on:
-          branch: master
-        script:
-          - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
-          - command -v nvm
-      deploy:
-        provider: script
-        script: bash scripts/deploy.sh
-        on:
-          branch: master
-        env:
-          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+    - stage: Installing dependencies...
+      script: yarn install
+    - stage: Unit Tests
+      script: yarn run test
+    - stage: Produce Coverage
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
+  env:
+    - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+
+# matrix:
+#   include:
+#     - language: node_js
+#       node_js:
+#         - "stable"
+#       cache:
+#         directories:
+#           - "node_modules"
+#       jobs:
+#         include:
+#           - stage: Installing dependencies...
+#             script: yarn install
+#           - stage: Unit Tests
+#             script: yarn test
+#           # - stage: Produce Coverage
+#           #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+#     - language: python
+#       python:
+#         - "3.6"
+#       branches:
+#         only:
+#           - master
+#       install:
+#         - pip3 install awscli
+#         - pip3 install aws-sam-cli
+#       script:
+#         - sam validate --template scripts/template.yaml
+#       before_deploy:
+#         on:
+#           branch: master
+#         script:
+#           - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+#           - command -v nvm
+#       deploy:
+#         provider: script
+#         script: bash scripts/deploy.sh
+#         on:
+#           branch: master
+#         env:
+#           - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
