@@ -25,6 +25,12 @@ matrix:
         - pip3 install aws-sam-cli
       script:
         - sam validate --template scripts/template.yaml
+      before_deploy:
+        on:
+          branch: master
+        script:
+          - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+          - command -v nvm
       deploy:
         provider: script
         script: bash scripts/deploy.sh
