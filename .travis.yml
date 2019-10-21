@@ -8,6 +8,8 @@ matrix:
           - "node_modules"
       jobs:
         include:
+          - stage: Test pip
+            script: pip --version
           - stage: Installing dependencies...
             script: yarn install
           - stage: Unit Tests
