@@ -17,21 +17,17 @@ matrix:
     - language: python
       python:
         - "2.7"
-      branches:
-        only:
-          - master
-      before_install:
-        - cd scripts
-      install:
-        - pip install awscli
-        - pip install aws-sam-cli
-      script:
-        - sam validate
-      deploy:
-        provider: script
-        script: deploy.sh
-        on:
-          branch: master
-        env:
-          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy          
+      jobs:
+        include:
+          - stage: Installing dependencies...
+            script:
+              - pip install awscli
+              - pip install aws-sam-cli
+          - stage: SAM Validate
+            script: sam validate
+          - stage: Deploy to aws
+            if: branch = master
+            env:
+              - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
+            script: bash scripts/deploy.sh     
 
