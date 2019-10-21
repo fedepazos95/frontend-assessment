@@ -1,8 +1,11 @@
+ENV=dev
 UUID=$$
 PROJECT=frontend-assessment
 STACK=$ENV-$PROJECT-infra
+DEPLOY_BUCKET=fp95-code-deploy
 DOMAIN_BUCKET=$PROJECT-$ENV
 LOG_BUCKET=$PROJECT-log-$ENV
+LOGS_USER_ARN=arn:aws:iam::960673230763:user/federicopazos
 
 echo 'Building SAM package and uploading cloudformation'
 sam package --template-file "scripts/template.yaml" --output-template-file "template_$UUID.yaml" --s3-bucket $DEPLOY_BUCKET
