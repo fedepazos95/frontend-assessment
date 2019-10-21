@@ -4,26 +4,27 @@ node_js:
 cache:
   directories:
     - "node_modules"
-before_install:
-  - sudo pip3 install awscli
-  - sudo pip3 install aws-sam-cli
-script:
-  - sam validate --template scripts/template.yaml
 jobs:
   include:
+    - stage: Installing CLIs...
+      script:
+        - sudo pip install awscli
+        - sudo pip install aws-sam-cli
+    - stage: Validating template...
+      script: sam validate --template scripts/template.yaml
     - stage: Installing dependencies...
       script: yarn install
     - stage: Unit Tests
       script: yarn run test
     - stage: Produce Coverage
       script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
-  env:
-    - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+# deploy:
+#   provider: script
+#   script: bash scripts/deploy.sh
+#   on:
+#     branch: master
+#   env:
+#     - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
 
 # matrix:
 #   include:
