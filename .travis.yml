@@ -17,17 +17,16 @@ matrix:
     - os: linux
       language: python
       python:
-        - "3.6"
+        - "2.7"
       install:
-      - pip3 install awscli
-      - pip3 install aws-sam-cli
-      jobs:
-        include:
-          - stage: SAM Validate
-            script: sam validate
-          - stage: Deploy to aws
-            if: branch = master
-            env:
-              - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
-            script: bash scripts/deploy.sh     
-
+        - pip install awscli
+        - pip install aws-sam-cli
+      before_deploy:
+        - sam validate --template scripts/template.yaml
+      deploy:
+        provider: script
+        script: bash scripts/deploy.sh
+        env:
+          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
+        on:
+          branch: master
