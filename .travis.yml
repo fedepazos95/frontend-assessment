@@ -9,7 +9,7 @@ matrix:
       jobs:
         include:
           - stage: Test pip
-            script: pip --version
+            script: pip install awscli
           - stage: Installing dependencies...
             script: yarn install
           - stage: Unit Tests
@@ -17,21 +17,20 @@ matrix:
           # - stage: Produce Coverage
           #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
     - language: python
-      script: pytest
       python:
         - "2.7"
       branches:
-        only: master
+        only:
+          - master
       install:
         - pip install awscli
         - pip install aws-sam-cli
-      before_deploy:
+      script:
         - sam validate --template scripts/template.yaml
       # deploy:
       #   provider: script
-      #   script: bash scripts/deploy.sh
+      #   script: deploy.sh
       #   on:
       #     branch: master
-      # env:
-      #   global:
-      #   - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+      #   env:
+      #     - ENV=dev DEPLOY_BUCKET=fp95-code-deploy    
