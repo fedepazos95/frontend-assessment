@@ -18,12 +18,11 @@ matrix:
       language: python
       python:
         - "3.6"
+      install:
+      - pip3 install awscli
+      - pip3 install aws-sam-cli
       jobs:
         include:
-          - stage: Installing dependencies...
-            script:
-              - pip3 install awscli
-              - pip3 install aws-sam-cli
           - stage: SAM Validate
             script: sam validate
           - stage: Deploy to aws
