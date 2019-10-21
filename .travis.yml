@@ -8,11 +8,11 @@ jobs:
   include:
     - stage: Installing CLIs...
       script:
-        - sudo apt update
-        - sudo apt install python3-pip
-        - sudo pip3 install --upgrade pip
-        - sudo pip3 install awscli
-        - sudo pip3 install aws-sam-cli
+        - sudo -H apt update
+        - sudo -H apt install python3-pip
+        - sudo -H pip3 install --upgrade pip
+        - sudo -H pip3 install awscli
+        - sudo -H pip3 install aws-sam-cli
     - stage: Validating template...
       script: sam validate --template scripts/template.yaml
     - stage: Installing dependencies...
