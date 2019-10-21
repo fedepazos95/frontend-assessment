@@ -14,12 +14,28 @@ matrix:
             script: yarn test
           # - stage: Produce Coverage
           #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-          - stage: Creating AWS Credentials...
-            script: bash scripts/ecr_credentials.sh
-            if: branch = master
-          - stage: Deploying to aws...
-            script: bash scripts/deploy.sh
-            if: branch = master
-            env:
-              - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+    - language: python
+      python:
+        - "2.7"
+      branches:
+        only: master
+      before_install:
+        - cd scripts
+      install:
+        - pip install awscli
+        - pip install aws-sam-cli
+      script:
+        - sam validate
+      before_deploy:
+        provider: script
+        script: ecr_credentials.sh
+        on:
+          branch: master
+      deploy:
+        provider: script
+        script: deploy.sh
+        on:
+          branch: master
+        env:
+          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy          
 
