@@ -28,8 +28,7 @@
 
 ## Table of Contents
 * [About the Project](#about-the-project)
-* [Running the Web API](#running-the-web-api)
-* [Usage](#usage)
+* [Running the App](#running-the-app)
 * [Testing](#testing)
 * [Contact](#contact)
 * [License](#license)
@@ -95,8 +94,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [js-logo]: docs/images/js.png
 [swagger-screenshot]: docs/images/swagger.png
 [travis-url]: https://travis-ci.org/fedepazos95/frontend-assessment.svg?branch=master
-[coveralls-shield]: https://coveralls.io/repos/github/fedepazos95/frontend-assessment/badge.svg?branch=develop
-[coveralls-url]: https://coveralls.io/github/fedepazos95/frontend-assessment?branch=develop
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/9299d62f7e5bdcb0288f/maintainability
 [maintainability-url]: https://codeclimate.com/github/fedepazos95/frontend-assessment/maintainability
 [dependencies-url]: https://david-dm.org/fedepazos95/frontend-assessment.svg
