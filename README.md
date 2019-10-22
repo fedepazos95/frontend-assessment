@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![travis-url]
+[![Maintainability][maintainability-shield]][maintainability-url]
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fedepazos95/frontend-assessment/issues)
+![](https://david-dm.org/fedepazos95/frontend-assessment.svg)
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
+<br />
+<p align="center">
+  <a href="https://github.com/fedepazos95/frontend-assessment">
+    <img src="docs/images/react.png" alt="Logo" width="100" height="100">
+  </a>
 
-In the project directory, you can run:
+  <h2 align="center">React Frontend Assessment</h2>
 
-### `yarn start`
+  <p align="center">
+    <a href="https://github.com/fedepazos95/frontend-assessment"><strong>Explore the docs »</strong></a>
+    <br />
+    <small>
+      <!-- <a href="https://github.com/fedepazos95/frontend-assessment">View Demo</a>
+      · -->
+      <a href="http://frontend-assessment-dev.s3-website-us-east-1.amazonaws.com/">View Demo</a>
+      ·
+      <a href="https://github.com/fedepazos95/frontend-assessment/issues">Report Bug</a>
+    </small>
+  </p>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Table of Contents
+* [About the Project](#about-the-project)
+* [Running the Web API](#running-the-web-api)
+* [Usage](#usage)
+* [Testing](#testing)
+* [Contact](#contact)
+* [License](#license)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About The Project
+This is a React App that gives an easy way to
+browse all the Brastlewark's inhabitants details.  
+It was bootstrapped using [Create-React-App](https://github.com/facebook/create-react-app) and it's using [MaterialUI](https://material-ui.com/) as UI framework.
 
-### `yarn build`
+This project features all the latest tools and practices in the industry.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 16** - React Router 5
+- Redux
+- _Lint_ - ES6, Airbnb Recommended config
+- _Test_ - Jest
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Redux](https://redux.js.org/) is being used as a state management tool to persist the state of the app when the gnomes list is loaded, so if you enter to see the profile page of some gnome, you don't need to make a request again.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All components were made as function component because those are much easier to read and test, and they have better performance.  
+New React features like Hooks are also being used.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Running the App
+To get a local copy up and running follow these simple steps.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Download or clone the project code
+```sh
+git clone https://github.com/fedepazos95/frontend-assessment.git
+```
+2. Install project dependencies
+```sh
+yarn #or npm i
+```
+3. Start the development server by running:
+```sh
+yarn dev
+```
 
-## Learn More
+You can try the app by entering [here](http://frontend-assessment-dev.s3-website-us-east-1.amazonaws.com/)!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Testing
+No need to configure anything, just run the script :)
 
-### Code Splitting
+```sh
+yarn test
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contact
+- [LinkedIn][linkedin-url]
+- [Email][mailto]
 
-### Analyzing the Bundle Size
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[mailto]: mailto:fede.pazos95@gmail.com
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/federicopazos/
+[js-logo]: docs/images/js.png
+[swagger-screenshot]: docs/images/swagger.png
+[travis-url]: https://travis-ci.org/fedepazos95/frontend-assessment.svg?branch=master
+[coveralls-shield]: https://coveralls.io/repos/github/fedepazos95/frontend-assessment/badge.svg?branch=develop
+[coveralls-url]: https://coveralls.io/github/fedepazos95/frontend-assessment?branch=develop
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/9299d62f7e5bdcb0288f/maintainability
+[maintainability-url]: https://codeclimate.com/github/fedepazos95/frontend-assessment/maintainability
+[dependencies-url]: https://david-dm.org/fedepazos95/frontend-assessment.svg
