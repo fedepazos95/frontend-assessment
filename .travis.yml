@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.7"
+  - "3.6"
 os: linux
 jobs:
   include:
@@ -10,10 +10,18 @@ jobs:
         - sudo -H curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         - sudo -H apt-get install -y nodejs
         - node -v
+    - stage: Installing awscli
+      script:
         - sudo -H pip install awscli
         - aws --version
-        - sudo -H pip install aws-sam-cli
-        - sam --version
+    - stage: Installing Homebrew and Sam
+      script:
+        - sudo -H sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+        - sudo -H test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+        - sudo -H test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        - sudo -H test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+        - sudo -H echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+        - brew --version
     - stage: Validating template...
       script: sam validate --template scripts/template.yaml
     # - stage: Installing dependencies...
