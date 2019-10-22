@@ -39,7 +39,7 @@ export default function Avatar({
   }
   return (
     <div
-      className={`${className} ${classes.rounded} ${classes.fluid}`}
+      className={imageClasses}
       style={style}
     />
   );
