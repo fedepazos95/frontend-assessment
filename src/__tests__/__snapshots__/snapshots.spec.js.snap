@@ -2,7 +2,7 @@
 
 exports[`Avatar snapshot renders 1`] = `
 <div
-  className="undefined makeStyles-rounded-2 makeStyles-fluid-1"
+  className="makeStyles-rounded-2 makeStyles-fluid-1"
   style={
     Object {
       "backgroundImage": "url(undefined)",
