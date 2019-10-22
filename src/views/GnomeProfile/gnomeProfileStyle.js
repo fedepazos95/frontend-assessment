@@ -39,6 +39,10 @@ const gnomeProfileStyle = {
     maxWidth: '700px',
     width: '100%',
   },
+  center: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 };
 
 export default gnomeProfileStyle;

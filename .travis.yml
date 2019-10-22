@@ -20,7 +20,7 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: $S3_DEV_BUCKET
   skip_cleanup: true
-  local-dir: public
+  local-dir: build
   acl: public_read
   cache_control: "max-age=21600"
 after_success:

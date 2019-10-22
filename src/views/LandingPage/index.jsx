@@ -37,7 +37,7 @@ export default function LandingPage() {
           <GridContainer>
             <GridItem xs={12} md={12} sm={12}>
               <div className={classes.brand}>
-                <h1 className={classes.title}>Welcome to testing</h1>
+                <h1 className={classes.title}>Welcome to Brastlewark</h1>
               </div>
             </GridItem>
           </GridContainer>
