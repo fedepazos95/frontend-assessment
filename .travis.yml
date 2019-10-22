@@ -9,7 +9,6 @@ directories:
 
 install:
   - sudo pip install awscli
-  - sudo pip install aws-sam-cli
 before_script:
   - npm install
   - npm test
