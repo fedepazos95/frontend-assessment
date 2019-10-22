@@ -1,40 +1,35 @@
-matrix:
-  include:
-    - language: node_js
-      node_js:
-        - "stable"
-      cache:
-        directories:
-          - "node_modules"
-      jobs:
-        include:
-          - stage: Installing dependencies...
-            script: yarn install
-          - stage: Unit Tests
-            script: yarn test
-          # - stage: Produce Coverage
-          #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-    - language: python
-      python:
-        - "3.6"
-      branches:
-        only:
-          - master
-      install:
-        - pip3 install awscli
-        - pip3 install aws-sam-cli
-      script:
-        - sam validate --template scripts/template.yaml
-      before_deploy:
-        on:
-          branch: master
-        script:
-          - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
-          - command -v nvm
-      deploy:
-        provider: script
-        script: bash scripts/deploy.sh
-        on:
-          branch: master
-        env:
-          - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+sudo: required
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+directories:
+  - node_modules
+
+install:
+  - sudo pip install awscli
+before_script:
+  - npm install
+  - npm test
+script:
+  - npm run build
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $S3_DEV_BUCKET
+  skip_cleanup: true
+  local-dir: public
+  acl: public_read
+  cache_control: "max-age=21600"
+after_success:
+branches:
+  only:
+    - master
+    - develop
+before_deploy:
+  - aws s3 rm s3://$S3_DEV_BUCKET --recursive
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - test $TRAVIS_BRANCH = "master" && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID_DEV --paths "/*"
