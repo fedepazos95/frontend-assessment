@@ -1,4 +1,5 @@
 import { container } from 'assets/commonStyles';
+import avatarStyle from 'components/Avatar/avatarStyle';
 
 const gnomeProfileStyle = {
   container,
@@ -43,6 +44,7 @@ const gnomeProfileStyle = {
     display: 'flex',
     justifyContent: 'center',
   },
+  ...avatarStyle,
 };
 
 export default gnomeProfileStyle;

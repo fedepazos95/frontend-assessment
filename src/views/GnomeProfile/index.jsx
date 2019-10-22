@@ -61,7 +61,8 @@ function GnomeProfile({ history, match }) {
       <div className={classNames(classes.main, classes.mainRaised, classes.textCenter)}>
         <h1>Gnome Profile</h1>
         <div className={classes.center}>
-          <Avatar image={gnome.thumbnail} className={classes.avatar} minHeight="500px" />
+          <img alt="Profile" src={gnome.thumbnail} className={classNames(classes.fluid, classes.rounded)} />
+          {/* <Avatar image={gnome.thumbnail} className={classes.avatar} minHeight="250px" height="700px" /> */}
         </div>
         <div className={classes.container}>
           <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
