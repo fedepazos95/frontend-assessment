@@ -16,7 +16,6 @@ import Header from 'components/Header';
 import HeaderLinks from 'components/Header/Links';
 import Parallax from 'components/Parallax';
 import Footer from 'components/Footer';
-import Avatar from 'components/Avatar';
 import Stats from 'components/Stats';
 import GnomeFieldList from 'components/GnomeFieldList';
 // Style
@@ -62,7 +61,6 @@ function GnomeProfile({ history, match }) {
         <h1>Gnome Profile</h1>
         <div className={classes.center}>
           <img alt="Profile" src={gnome.thumbnail} className={classNames(classes.fluid, classes.rounded)} />
-          {/* <Avatar image={gnome.thumbnail} className={classes.avatar} minHeight="250px" height="700px" /> */}
         </div>
         <div className={classes.container}>
           <Stats age={gnome.age} weight={gnome.weight} height={gnome.height} hairColor={gnome.hair_color} />
