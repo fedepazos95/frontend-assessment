@@ -10,6 +10,30 @@ directories:
 install:
   - sudo pip install awscli
   - sudo pip install aws-sam-cli
+before_script:
+  - npm install
+  - npm test
+script:
+  - npm run build
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $S3_DEV_BUCKET
+  skip_cleanup: true
+  local-dir: public
+  acl: public_read
+  cache_control: "max-age=21600"
+after_success:
+branches:
+  only:
+    - master
+    - develop
+before_deploy:
+  - aws s3 rm s3://$S3_DEV_BUCKET --recursive
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - test $TRAVIS_BRANCH = "master" && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID_DEV --paths "/*"
 
 
 
