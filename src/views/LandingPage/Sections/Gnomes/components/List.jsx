@@ -26,7 +26,7 @@ export default function List({
                 {
                   content: (
                     <div>
-                      <Avatar to={`${gnome.id}/profile`} image={gnome.thumbnail} alt={gnome.name} />
+                      <Avatar to={`${gnome.id}/profile`} image={gnome.thumbnail} minHeight="180px" />
                     </div>
                   ),
                 }

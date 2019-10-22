@@ -11,7 +11,7 @@ import styles from './avatarStyle';
 const useStyles = makeStyles(styles);
 
 export default function Avatar({
-  className, to, image, alt,
+  className, to, image, minHeight,
 }) {
   const classes = useStyles();
   const imageClasses = classNames({
@@ -20,34 +20,34 @@ export default function Avatar({
     [className]: className !== undefined,
   });
 
+  const style = {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover',
+    minHeight,
+  };
+
   if (to) {
     // Wrap it as a Link if it have to prop
     return (
       <Link to={to}>
-        <img
-          src={image}
-          alt={alt}
+        <div
           className={imageClasses}
+          style={style}
         />
       </Link>
     );
   }
   return (
-    <img
-      src={image}
-      alt={alt}
+    <div
       className={`${className} ${classes.rounded} ${classes.fluid}`}
+      style={style}
     />
   );
 }
-
-Avatar.defaultProps = {
-  alt: '',
-};
 
 Avatar.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   image: PropTypes.string.isRequired,
-  alt: PropTypes.string,
+  minHeight: PropTypes.string.isRequired,
 };
