@@ -32,7 +32,7 @@ export default function Gnomes() {
   }, [dispatch, gnomesList]);
 
   const handlePageChange = (action) => {
-    window.scroll({ top: 600, left: 0, behavior: 'smooth' });
+    window.scroll({ top: 400, left: 0, behavior: 'smooth' });
     // Prevent empty list
     const nextPage = action === 'next' ? page + 1 : page - 1;
     setTimeout(() => {
