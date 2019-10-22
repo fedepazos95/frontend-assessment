@@ -1,35 +1,19 @@
-language: python
-python:
-  - "3.6"
-os: linux
-jobs:
-  include:
-    - stage: Installing Node...
-      script:
-        - sudo -H apt-get install curl
-        - sudo -H curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-        - sudo -H apt-get install -y nodejs
-        - node -v
-    - stage: Installing awscli
-      script:
-        - sudo -H pip install awscli
-        - aws --version
-    - stage: Installing Homebrew and Sam
-      script:
-        - sudo -H sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-        - sudo -H test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-        - sudo -H test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-        - sudo -H test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-        - sudo -H echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-        - brew --version
-    - stage: Validating template...
-      script: sam validate --template scripts/template.yaml
-    # - stage: Installing dependencies...
-    #   script: yarn install
-    # - stage: Unit Tests
-    #   script: yarn run test
-    # - stage: Produce Coverage
-    #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+directories:
+  - node_modules
+
+before_install:
+  - npm install
+  - npm run test
+install:
+  - npm run build
+
+
+
 # deploy:
 #   provider: script
 #   script: bash scripts/deploy.sh
