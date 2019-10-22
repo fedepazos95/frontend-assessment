@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar snapshot renders 1`] = `
+<div
+  className="undefined makeStyles-rounded-2 makeStyles-fluid-1"
+  style={
+    Object {
+      "backgroundImage": "url(undefined)",
+      "backgroundSize": "cover",
+      "minHeight": undefined,
+    }
+  }
+/>
+`;
+
+exports[`Card snapshot renders 1`] = `
+<div
+  className="makeStyles-card-3"
+/>
+`;
+
+exports[`CardBody snapshot renders 1`] = `
+<div
+  className="makeStyles-cardBody-6"
+/>
+`;
+
+exports[`CardHeader snapshot renders 1`] = `
+<div
+  className="makeStyles-cardHeader-4"
+/>
+`;
+
+exports[`Footer snapshot renders 1`] = `
+<footer
+  className="makeStyles-footer-8"
+>
+  <div
+    className="makeStyles-container-10"
+  >
+    <div
+      className="makeStyles-right-7"
+    >
+      ©
+      2019 Frontend Assessment - by Federico Pazos
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`GnomeCard snapshot renders 1`] = `
+<div
+  className="makeStyles-card-3 makeStyles-card-11"
+>
+  <div
+    className="makeStyles-cardHeader-4"
+  />
+  <div
+    className="makeStyles-cardBody-6"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`GnomeFieldList snapshot renders 1`] = `
+<ul
+  className="MuiList-root MuiList-padding"
+>
+  <h3 />
+  <div>
+    This gnome has no undefined :(
+  </div>
+</ul>
+`;
+
+exports[`GridContainer snapshot renders 1`] = `
+<div
+  className="MuiGrid-root makeStyles-grid-17  MuiGrid-container"
+/>
+`;
+
+exports[`GridItem snapshot renders 1`] = `
+<div
+  className="MuiGrid-root makeStyles-grid-121  MuiGrid-item"
+/>
+`;
+
+exports[`Header snapshot renders 1`] = `
+<header
+  className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-122 undefined MuiAppBar-colorPrimary mui-fixed"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular makeStyles-container-123 MuiToolbar-gutters"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-title-128"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      />
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </button>
+    <div
+      className="makeStyles-flex-126"
+    />
+    <div
+      className="PrivateHiddenCss-smDown-207"
+    />
+  </div>
+</header>
+`;
+
+exports[`Parallax snapshot renders 1`] = `
+<div
+  className="makeStyles-parallax-227"
+  style={
+    Object {
+      "backgroundImage": "url(\\"undefined\\")",
+      "transform": "translate3d(0,0px,0)",
+    }
+  }
+/>
+`;
+
+exports[`Stats snapshot renders 1`] = `
+<div
+  className="makeStyles-stats-228"
+>
+  <div
+    className="MuiGrid-root makeStyles-grid-17  MuiGrid-container"
+  >
+    <div
+      className="MuiGrid-root makeStyles-grid-121 makeStyles-statItem-230 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root makeStyles-icons-229"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+        />
+      </svg>
+      Age: undefined
+    </div>
+    <div
+      className="MuiGrid-root makeStyles-grid-121 makeStyles-statItem-230 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root makeStyles-icons-229"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"
+        />
+      </svg>
+      Weight: undefined
+    </div>
+    <div
+      className="MuiGrid-root makeStyles-grid-121 makeStyles-statItem-230 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root makeStyles-icons-229"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13 6.99h3L12 3 8 6.99h3v10.02H8L12 21l4-3.99h-3z"
+        />
+      </svg>
+      Height: undefined
+    </div>
+    <div
+      className="MuiGrid-root makeStyles-grid-121 makeStyles-statItem-230 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root makeStyles-icons-229"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+        />
+      </svg>
+      Hair Color: undefined
+    </div>
+  </div>
+</div>
+`;
