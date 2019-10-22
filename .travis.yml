@@ -1,39 +1,71 @@
-language: node_js
+language: python
+python:
+  - "3.7"
 os: linux
-node_js:
-  - "stable"
-cache:
-  directories:
-    - "node_modules"
 jobs:
   include:
-    - stage: Installing CLIs...
+    - stage: Installing Node...
       script:
-        - yes '' | sudo -H add-apt-repository ppa:deadsnakes/ppa
-        - sudo -H apt update
-        - sudo -H apt install python3.6
-        - python -V
-        - sudo -H apt install python3-pip python3-setuptools python3-wheel
-        - sudo -H pip3 install --upgrade pip
-        - sudo -H pip3 install awscli
+        - sudo -H apt-get install curl
+        - sudo -H curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        - sudo -H apt-get install -y nodejs
+        - node -v
+        - sudo -H pip install awscli
         - aws --version
-        - sudo -H pip3 install aws-sam-cli
+        - sudo -H pip install aws-sam-cli
         - sam --version
     - stage: Validating template...
       script: sam validate --template scripts/template.yaml
-    - stage: Installing dependencies...
-      script: yarn install
-    - stage: Unit Tests
-      script: yarn run test
-    - stage: Produce Coverage
-      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
-  env:
-    - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+    # - stage: Installing dependencies...
+    #   script: yarn install
+    # - stage: Unit Tests
+    #   script: yarn run test
+    # - stage: Produce Coverage
+    #   script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+# deploy:
+#   provider: script
+#   script: bash scripts/deploy.sh
+#   on:
+#     branch: master
+#   env:
+#     - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
+
+# language: node_js
+# os: linux
+# node_js:
+#   - "stable"
+# cache:
+#   directories:
+#     - "node_modules"
+# jobs:
+#   include:
+#     - stage: Installing CLIs...
+#       script:
+#         - yes '' | sudo -H add-apt-repository ppa:deadsnakes/ppa
+#         - sudo -H apt update
+#         - sudo -H apt install python3.6
+#         - python -V
+#         - sudo -H apt install python3-pip python3-setuptools python3-wheel
+#         - sudo -H pip3 install --upgrade pip
+#         - sudo -H pip3 install awscli
+#         - aws --version
+#         - sudo -H pip3 install aws-sam-cli
+#         - sam --version
+#     - stage: Validating template...
+#       script: sam validate --template scripts/template.yaml
+#     - stage: Installing dependencies...
+#       script: yarn install
+#     - stage: Unit Tests
+#       script: yarn run test
+#     - stage: Produce Coverage
+#       script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+# deploy:
+#   provider: script
+#   script: bash scripts/deploy.sh
+#   on:
+#     branch: master
+#   env:
+#     - ENV=dev DEPLOY_BUCKET=fp95-code-deploy
 
 # matrix:
 #   include:
